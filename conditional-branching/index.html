@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let isMarried = confirm("Are you married?");
+        let message = isMarried ? "married" : "not married";
+        alert( `You are ${message}` );
+
+        let answer = prompt("What's the \"official\" name of JavaScript?");
+        let response = (answer == "ECMAScript") ? "Right!" : "You don't know? \"ECMAScript\"!";
+        alert( response );
+
+        let number = prompt("Enter a number", 0);
+        response = number > 0 ? 1 : number < 0 ? -1 : 0;
+        alert( response );
+
+        let result = (a + b < 5) ? 'Below' : 'Over';
+    </script>
+</body>
+</html>

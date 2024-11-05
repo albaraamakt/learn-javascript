@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // let result = alert(1) || alert(2);
+        // alert(result);
+
+        // let age = prompt("Your age: ");
+        // if (age <= 90 && age >= 18) {
+        //     alert("Your age is between 18 and 90");
+        // }
+        // if (!(age <= 90 && age >= 18)) {
+        //     alert("Your age is not between 18 and 90 (1)");
+        // }
+        // if (age > 90 || age < 18) {
+        //     alert("Your age is not between 18 and 90 (2)");
+        // }
+        let userName = prompt("User Name:");
+        let password;
+        if (userName == "Admin") {
+            password = prompt("Password");
+            if (password == "TheMaster") {
+                alert("Welcome!");
+            } else if (!password) {
+                alert("Canceled");
+            } else {
+                alert("Wrong password");
+            };
+        } else if (!userName) {
+            alert("Canceled");
+        } else {
+            alert("I don't know you");
+        };
+
+    </script>
+</body>
+</html>
