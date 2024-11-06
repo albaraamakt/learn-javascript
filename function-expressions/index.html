@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // function sayHi() {
+        //     alert( "Hello" );
+        //     return 1;
+        // }
+
+        // alert( typeof sayHi );
+        // let func = sayHi;
+        // alert( func );
+        // alert( func() + ' from func()');
+
+        let sayHi = function() {
+            alert( "Hello" );
+            return 1;
+        }; // semicolon is recommended at the end of the statement, it's not a part of the function syntax.
+
+        alert( sayHi );
+
+        function ask(question, yes, no) {
+            if (confirm(question)) yes();
+            else no();
+        }
+
+        function showOk() { // Callback function
+            alert( "You agreed" );
+        }
+        function showCancel() { // Callback function
+            alert( "You cancelled" );
+        }
+
+        ask("Do you agree?", showOk, showCancel);
+
+        ask(
+            "DO YOU AGREE??",
+            function() {alert( "you agreedddd" )}, // anonymous function (can't be reached outside this function)
+            function() {alert("you cancelleddd")} // anonymous function 
+        );
+
+        // Function declaration is only visible inside the block where it resides in.
+        let age = 16;
+
+        if (age < 18) {
+            function welcome() {
+                alert( "Hello" );
+            }
+        } else {
+            function welceom() {
+                alert( "Greetings" )
+            }
+        }
+        /*
+        welcome(); // error: welcome is not defined
+        */
+        // Solution:
+        let welcome;
+
+        if (age < 18) {
+            welcome = function() {
+                alert("Hello")
+            };
+        } else {
+            welcome = function() {
+                alert("Greetings")
+            };
+        }
+
+        // welcome();
+        // or
+        welcome = (age > 18) ?
+            function() { alert("hello from anonymous function")} :
+            function() { alert("greetings from anonymous function")};
+
+        welcome();
+    </script>
+</body>
+</html>

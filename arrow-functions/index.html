@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let func = (a, b) => a + b; // arrow functions are a shorter way of writing function expressions
+        // func is the same as..
+        func = function(a, b) {
+            return a + b;
+        };
+        // if no parameters needed...
+        func = () => alert('greetings');
+        // if multiline expressions are needed...
+        func = (a, b) => {
+            let result = a + b;
+            return result; // curly braces require a return statement
+        };
+    </script>
+</body>
+</html>

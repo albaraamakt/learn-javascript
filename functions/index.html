@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // function showMessage() {
+        //     alert("hello");
+        // }
+
+        // showMessage();
+
+        // function greet(name) {
+        //     let birthday = prompt("What is your birthday?")
+        //     alert( `Hello ${name}, ${birthday}` );
+        // }
+        // greet("John");
+        // alert( birthday );
+
+        // let userName = 'Bob'; // Global variable
+
+        // function sayHi() {
+        //     // Global variable userName is shadowed by local variable with the same name
+        //     let userName = 'John'; 
+        //     let message = 'Hi ' + userName;
+        //     alert( message );
+        //     return message;
+        // }
+
+        // let message = sayHi();
+        // alert( userName + message );
+
+        function showMessage(from, text) {
+            alert( from + ' ' + text );
+        }
+
+        showMessage('Ann', 'Hello!'); // 'Ann' and 'Hello!' are copied to from and text parameters
+
+        showMessage('Ann'); // text value becomes undefined with no errors
+
+        function showMessage(from, text = 'no text given') {
+            alert( from + ' ' + text);
+        }
+
+        showMessage('Ann', null);
+
+        alert( typeof String(null) );
+
+        function showMessage(from, text = showError()) {
+            alert( from + ' ' + text);
+        }
+
+        function showError() {
+            let text = prompt( 'No text given' );
+            return text;
+        }
+
+        function noValueReturned() {
+            return;
+        }
+        alert( noValueReturned() ); // empty return and no return returns undefined
+
+        function checkAge(age) {
+            let result = (age > 18) ? true : confirm('Did parents allow you?')
+            return result;
+            // or 
+            // return (age > 18) ? true : confirm('Did parent allow you?')
+        }
+        
+        function checkAge(age) {
+            let result = (age > 18) || confirm('Did parents allow you?')
+            return result;
+            // or 
+            // return (age > 18) || confirm('Did parent allow you?')
+        }
+
+        function min(a, b) {
+            return a > b ? b : a;
+        }
+
+        alert(min(2, 1) == 1);
+        alert(min(2, 5) == 2);
+        alert(min(1, 1) == 1);
+
+    </script>
+</body>
+</html>
