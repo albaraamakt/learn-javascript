@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let user = new Object();
+        //or
+        user = {}; // object literal declaration
+
+        function isEmpty(obj) {
+            for (let key in obj) {
+                if (key) return false;
+            }
+            return true;
+        }
+        
+        alert( isEmpty(user) );
+        
+        user.name = "John";
+        
+        alert( isEmpty(user) );
+
+        let salaries = {
+            John: 100,
+            Ann: 160,
+            Pete: 130,
+        }
+
+        let total = 0;
+
+        for (key in salaries) {
+            total += salaries[key];
+        }
+
+        alert(total);
+
+        function multiplyNumeric(obj) {
+            for (key in obj) {
+                if (typeof obj[key] == 'number') {
+                    obj[key] *= 2;
+                }
+            }
+            return obj;
+        }
+
+        // before the call
+        let menu = {
+        width: 200,
+        height: 300,
+        title: "My menu"
+        };
+
+        alert(Object.values(menu));
+        alert(multiplyNumeric(Object.values(menu)));
+        alert(Object.values(menu));
+    </script>
+</body>
+</html>
