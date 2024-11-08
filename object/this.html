@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let user = {
+            name: "John",
+            age: 30
+        };
+
+        user.sayHi = function () {
+            alert("Hello!");
+        };
+
+        alert(user.sayHi);
+
+        user = {
+            sayHi: function () {
+                alert("Hello");
+            }
+        };
+
+        user = {
+            sayHi() {
+                alert("Hello")
+            }
+        }
+
+        user = {
+            name: "John",
+            age: 30,
+            sayHi: function () {
+                alert(this.name);
+            }
+        };
+
+        user.sayHi();
+
+        user = { name: "John" };
+        let admin = { name: "Admin" };
+
+        function sayHi() {
+            alert(this.name);
+        }
+
+        user.f = sayHi;
+        admin.f = sayHi;
+
+        user.f();
+        admin.f();
+
+        let dog = {
+            name: "Cupcake",
+            voice: function () {
+                alert(this.name);
+            }
+        };
+
+        let cat = {
+            name: "Pickles",
+        }
+
+        cat.voice = dog.voice
+
+        dog.voice();
+        cat.voice();
+
+        // Calculator
+        let calculator = {
+            read: function () {
+                this.x = +prompt("Enter first operand", 0);
+                this.y = +prompt("Enter second operand", 0);
+            },
+            sum: function () {
+                return this.x + this.y;
+            },
+            diff: function () {
+                return Math.abs(this.x) - Math.abs(this.y);
+            },
+            mul: function () {
+                return this.x * this.y;
+            },
+            div: function () {
+                return this.x / this.y;
+            }
+        }
+
+        calculator.read();
+        alert(calculator.sum());
+        alert(calculator.mul());
+    </script>
+</body>
+
+</html>
