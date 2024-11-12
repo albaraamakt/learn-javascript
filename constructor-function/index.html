@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function User(name) {
+            this.name = name;
+            this.age = 22;
+        }
+
+        let user = new User("John");
+        alert(user.name)
+
+        let admin = new function() {
+            this.name = "Admin",
+            this.age = 22,
+            this.sayHi = () => alert(this.name);
+        }
+
+        admin.sayHi();
+
+        let obj = {}
+        function A() {return obj}
+        function B() {return obj}
+        
+        let a = new A();
+        let b = new B();
+        
+        alert( a == b );
+
+        function Calculator() {
+            this.read = function() {
+                this.x = +prompt("x?");
+                this.y = +prompt("y?");
+            };
+            this.sum = function() {
+                return this.x + this.y;
+            };
+            this.mul = function() {
+                return this.x * this.y;
+            };
+        }
+
+        let calc = new Calculator();
+
+        calc.read();
+
+        alert( "Sum=" + calc.sum() );
+        alert( "Mul=" + calc.mul() );
+
+        function Accumulator(startingValue) {
+            this.value = startingValue;
+            // this.read = () => this.value += +prompt("Add");
+            this.read = function() {
+                this.value += Number(prompt("Add", 0));
+            }
+        }
+
+        let accum = new Accumulator(1);
+
+        accum.read();
+        accum.read();
+
+        alert(accum.value);
+    </script>
+</body>
+</html>
