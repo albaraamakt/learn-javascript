@@ -17,7 +17,13 @@
 
         alert(user.id);
         alert(user["id"]);
-        alert("cherry-pick me");
+        // alert("cherry-pick me");
+
+        let id2 = Symbol.for("id")
+        alert(id == id2)
+
+        alert( Symbol.keyFor(id2) )
+
     </script>
 </body>
 </html>
